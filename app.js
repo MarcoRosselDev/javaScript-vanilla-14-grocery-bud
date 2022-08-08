@@ -2,8 +2,8 @@
 //grocery-container  class-que-de-debe-agregar
 // edit option
 
-const alert = document.querySelector('.alert');
 const form = document.querySelector('.grocery-form');
+const alert = document.querySelector('.alert');
 const grocery = document.getElementById('grocery');
 const submitBtn = document.querySelector('.submit-btn');
 const container = document.querySelector('.grocery-container');
@@ -21,24 +21,23 @@ let editID = "";
 form.addEventListener('submit', addItem);
 
 // clear items
-clearBtn.addEventListener('click', clearItem);
+clearBtn.addEventListener('click', clearItems);
 
 // ****** FUNCTIONS **********
-function addItem(e){
+function addItem(e) {
+
   e.preventDefault();
   const value = grocery.value;
   const id = new Date().getTime().toString();
-  if (value && !editFlag) {
 
-    const element = document.createElement('article');
-      //add class
-      element.classList.add('grocery-item');
+  if (value !== "" && !editFlag) {
 
-      //add id
-      let attr = document.createAttribute('data-id');
-      attr.value = id;
-      element.setAttributeNode(attr);
-      element.innerHTML = `
+    const element = document.createElement("article");
+    let attr = document.createAttribute("data-id");
+    attr.value = id;
+    element.setAttributeNode(attr);
+    element.classList.add("grocery-item");
+    element.innerHTML = `
         <p class="title">${value}</p>
         <div class="btn-container"> 
           <button type="button" class="edit-btn">
@@ -65,14 +64,17 @@ function addItem(e){
         setBackToDefault();
 
   } else if(value && editFlag) {
+
     console.log('editing');
+
   } else {
+
     displayAlert('pleace enter value', 'danger')
   }
 }
 //display alert
 function displayAlert(text, action){
-  
+
   alert.textContent = text;
   alert.classList.add(`alert-${action}`);
 
@@ -85,7 +87,7 @@ function displayAlert(text, action){
   },1000);
 }
 //clear items
-function clearItem(){
+function clearItems(){
 
   const items = document.querySelectorAll('.grocery-item');
 
@@ -98,6 +100,7 @@ function clearItem(){
     });
 
   }
+  container.classList.remove('show-container');
   
 };
 
