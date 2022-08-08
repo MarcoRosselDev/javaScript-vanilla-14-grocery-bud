@@ -29,15 +29,15 @@ function addItem(e){
 
     const element = document.createElement('article');
       //add class
-      element.classList.add('.grocery-item');
+      element.classList.add('grocery-item');
 
       //add id
-      const attr = document.createAttribute('data-id');
+      let attr = document.createAttribute('data-id');
       attr.value = id;
       element.setAttributeNode(attr);
       element.innerHTML = `
         <p class="title">${value}</p>
-        <div class="btn-container">
+        <div class="btn-container"> 
           <button type="button" class="edit-btn">
             <i class="fas fa-edit"></i>
           </button>
