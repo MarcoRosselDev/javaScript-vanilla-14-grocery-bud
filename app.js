@@ -115,7 +115,13 @@ function clearItems(){
   /* localStorage.removeItem('list'); */
 };
 //delete function
+function deleteItem(){
+  console.log('item deleted');
+}
 //edit function
+function editItem(){
+  console.log('edit item');
+}
 
 // set back to default
 function setBackToDefault(){
