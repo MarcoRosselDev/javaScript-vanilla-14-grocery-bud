@@ -119,8 +119,14 @@ function deleteItem(){
   console.log('item deleted');
 }
 //edit function
-function editItem(){
-  console.log('edit item');
+function editItem(e){
+
+  const element = e.currentTarget.parentElement.parentElement;
+  list.removeChild(element);
+  if (list.children.length === 0) {
+    container.classList.remove('show-container');
+  }
+  displayAlert('item removed', 'danger');
 }
 
 // set back to default
