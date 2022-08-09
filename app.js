@@ -23,6 +23,9 @@ form.addEventListener('submit', addItem);
 // clear items
 clearBtn.addEventListener('click', clearItems);
 
+
+
+
 // ****** FUNCTIONS **********
 function addItem(e) {
 
@@ -50,6 +53,11 @@ function addItem(e) {
             <i class="fas fa-trash"></i>
           </button>
         </div>`;
+    const deleteBtn = element.querySelector('.delete-btn');
+    const editBtn = element.querySelector('.edit-btn');
+
+    deleteBtn.addEventListener('click', deleteItem);
+    editBtn.addEventListener('click', editItem);
         // append child
         list.appendChild(element);
         
@@ -64,7 +72,6 @@ function addItem(e) {
 
         // set back to default
         setBackToDefault();
-
   } else if(value && editFlag) {
 
     console.log('editing');
@@ -107,6 +114,8 @@ function clearItems(){
   setBackToDefault();
   /* localStorage.removeItem('list'); */
 };
+//delete function
+//edit function
 
 // set back to default
 function setBackToDefault(){
