@@ -26,7 +26,9 @@ clearBtn.addEventListener('click', clearItems);
 // ****** FUNCTIONS **********
 function addItem(e) {
 
-  e.preventDefault();
+  e.preventDefault();/* se que era importante pero no se por que
+  
+  era para que no se autorecetee por que asi viene por defecto*/
   const value = grocery.value;
   const id = new Date().getTime().toString();
 
@@ -102,6 +104,8 @@ function clearItems(){
   }
   container.classList.remove('show-container');
   displayAlert('empty list', 'danger');
+  setBackToDefault();
+  /* localStorage.removeItem('list'); */
 };
 
 // set back to default
