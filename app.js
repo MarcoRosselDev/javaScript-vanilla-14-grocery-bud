@@ -76,6 +76,8 @@ function addItem(e) {
 
     editElement.innerHTML = value;
     displayAlert('value changed', 'success');
+    //edit local storage
+    editLocalStorage(editID);
     setBackToDefault();
 
   } else {
@@ -162,5 +164,8 @@ function addToLocalStorage(id, value){
   console.log('added to local storage');
 };
 
-function removeFromLocalStorag(id){};
+function removeFromLocalStorage(id){};
+function editLocalStorage(id, value){
+
+};
 // ****** SETUP ITEMS ********** 
